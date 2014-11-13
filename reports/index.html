@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accessibility Report</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"    type="text/javascript"></script>
+
+
+	<script id="simple-template" type="text/x-handlebars-template">
+      <tr>
+      	<td>{{type}}</td>
+      	<td>{{msg}}</td>
+      	<td>
+			{{#splitString technique delimiter=","}} 
+		    	<a href="http://www.w3.org/TR/WCAG20-TECHS/{{this}}.html" target="_blank">{{this}}</a>
+		    {{/splitString}}
+      	</td>
+      	<td>{{element.nodeName}}</td>
+      	<td>{{element.className}}</td>
+      	<td>{{element.id}}</td>
+      </tr>
+  	</script>
+
+  	
+
+  	<style>
+		th {
+			text-align: left;
+		}
+  	</style>
+  
+  <script type="text/javascript">
+    //wait for page to load
+    $(document).ready(function(){
+
+      var raw_template = $('#simple-template').html();
+      var template = Handlebars.compile(raw_template);
+      var placeHolder = $("#main");
+
+      $.get("formDemo2-report.json",function(data,status,xhr){
+        $.each(data,function(index,element){
+          var html = template(element);
+          placeHolder.append(html);
+        });
+      });
+    });
+  </script>
+
+	<script type="text/javascript" src="scripts/handlebars.js"></script>
+
+	<script>
+		  Handlebars.registerHelper("splitString", function(context, options){
+		    if(context){
+		      var ret = "";
+		      
+		      var tempArr = context.trim().split(options.hash["delimiter"]);
+
+		      for(var i=0; i < tempArr.length; i++)
+		      {
+		        ret = ret + options.fn(tempArr[i]);
+		      }
+
+		      return ret;
+		    }
+		  });
+	</script>
+</head>
+<body>
+	
+	<!-- Insertion point for handlebars template -->
+	<table style="margin-left:100px">
+		<thead>
+	      	<th>Type</th>
+	      	<th>Message</th>
+	      	<th>Technique</th>
+	      	<th>Node Name</th>
+	      	<th>Class Name</th>
+	      	<th>ID</th>
+	    </thead>
+	    <tbody id="main"></tbody>
+	</table>
+	
+</body>
+</html>

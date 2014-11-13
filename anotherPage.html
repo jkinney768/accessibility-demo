@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>My Account</title>
+        
+        <link href="app/assets/theme/styles/application.css" rel="stylesheet">
+    </head>
+
+  <body>
+
+    <div class="wrapper">
+
+          <form class="form" title="Form Component Demo">
+
+              <div class="panel panel--hasError">
+                  <div class="panel-hd">
+                    <h2 class="hdg hdg--2 mix__hdg--hasError mix__hdg--thick" role="heading">Sorry, but 3 errors have been made</h2>
+                  </div>
+                      <li>Error detail line 1</li>
+                      <li>Error detail line 2</li>
+                      <li>Error detail line 3</li>
+                  </ul>
+                  <ul>
+                      <li>
+                          <a href="#">Error Link 1</a>
+                      </li>
+                      <li>
+                          <a href="#">Error Link 2</a>
+                      </li>
+                      <li>
+                          <a href="#">Error Link 3</a>
+                      </li>
+                  </ul>
+              </div>
+
+              <h1>FORM FIELDS (VERTICAL ALIGN)</h1>
+
+             <ul>
+                 <li>
+                     <label for="textField" class="form__label">Text Field</label>
+                     <input id="textField" class="form__input form__input--textfield" type="text">
+                 </li>
+                 <li>
+                     <label for="numberField" class="form__label">Numerical Field</label>
+                     <input id="numberField" class="form__input form__input--textfield" type="tel">
+                 </li>
+                 <li>
+                     <label for="emailAddress" class="form__label">Email Address</label>
+                     <input id="emailAddress" class="form__input form__input--textfield" type="email">
+                 </li>
+                 <li>
+                     <label for="zipCode" class="form__label">ZIP Code</label>
+                     <input id="zipCode" class="form__input form__input--textfield" type="tel">
+                 </li>
+                 <li>
+                     <label for="amount" class="form__label">Currency</label>
+                     <div class="form__currency">
+                         <input id="amount" class="form__input form__input--textfield" type="number">
+                     </div>
+                 </li>
+                 <li>
+                     <label for="textArea" class="form__label">Text Area</label>
+                     <textarea id="textArea1" class="form__input form__input--textarea" name="textAreaText" rows="12"></textarea>
+                 </li>
+                 <li>
+                     <label for="dropdown" class="form__label">Dropdown</label>
+                     <select id="dropdown" class="form__input form__input--select">
+                          <option selected>Select XYZ</option>
+                          <option>Option 1</option>
+                      </select>
+                 </li>
+             </ul>
+
+              <h1>FORM FIELD (HORIZONTAL ALIGN)</h1>
+              <ul>
+                  <li>
+                    <div class="form__ele form__ele--level">
+                        <label for="textField--horiz" class="form__label">Text Field</label>
+                        <input id="textField--horiz" class="form__input form__input--textfield" type="text">
+                    </div>
+                  </li>
+              </ul>
+
+
+              <h1>ERROR FIELDS</h1>
+              <ul>
+                  <li>
+                      <label for="textFieldError" class="form__label">Text Field</label>
+                      <div class="form__supplement">
+                          <span class="form__message form__message--hasError">Inline Error Message</span>
+                      </div>
+                      <input id="textFieldError" class="form__input form__input--textfield form__input--hasError" type="text">
+                      <div class="form__supplement">
+                          <span class="form__message mix__form__message--italic">Example: example value</span>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="form__supplement">
+                          <span class="form__message mix__form__message--bright">Additional Support</span>
+                      </div>
+                  </li>
+              </ul>
+
+              <h1>CONFIRMATION FIELDS</h1>
+              <ul>
+                  <li>
+                      <label for="textFieldConfirm" class="form__label">Text Field</label>
+                      <input id="textFieldConfirm" class="form__input form__input--textfield" type="text">
+                      <div class="form__notice">
+                          <span class="form__message form__message--hasSuccess">Inline Confirmation</span>
+                      </div>
+                  </li>
+              </ul>
+
+              <h1>RADIOS (BUTTON STYLE)</h1>
+              <ul>
+                  <li>
+                      <input type="radio" class="form__radio" name="radios" id="radio1" checked>
+                      <label class="form__radioLabel" for="radio1">
+                          New Bank Account
+                      </label>
+                  </li>
+                  <li>
+                      <input type="radio" class="form__radio" name="radios" id="radio2">
+                      <label class="form__radioLabel" for="radio2">
+                          New Bank Account
+                      </label>
+                  </li>
+              </ul>
+              
+              <h1>CHECKBOXES (BUTTON STYLE)</h1>
+              <ul>
+                  <li>
+                      <input class="form__checkbox" type="checkbox" value="" name="checkbox" id="checkbox1" checked>
+                      <label class="form__checkboxLabel" for="checkbox1">Checkbox 1</label>
+                  </li>
+                  <li>
+                      <input class="form__checkbox" type="checkbox" value="" name="checkbox" id="checkbox2">
+                      <label class="form__checkboxLabel" for="checkbox2">Checkbox 2</label>
+                  </li>
+                  <li>
+                      <input class="form__checkbox" type="checkbox" value="" name="checkbox" id="checkbox3">
+                      <label class="form__checkboxLabel" for="checkbox3">Checkbox 3</label>
+                  </li>
+              </ul>
+              
+              <h1>PRIMARY BUTTONS</h1>
+              <ul class="hList">
+                  <li>
+                      <button class="btn" role="button">Primary</button>
+                  </li>
+                  <li>
+                      <button class="btn btn--isActive" role="button">Primary Pressed</button>
+                  </li>
+                  <li>
+                      <button class="btn btn--isDisabled" disabled role="button">Primary Disabled</button>
+                  </li>
+              </ul>
+
+              <input type="submit" value="Submit">
+          </form>
+      </div>
+	</body>
+	
+</html>
